@@ -9,13 +9,13 @@ import java.util.regex.*;
  * @since 0.1
  */
 
-public class Parse {
+public class Parser {
     private String expression;
     private int op1;
     private int op2;
     private char operator;
 
-    public Parse(String expression) throws ParseException {
+    public Parser(String expression) throws ParseException {
         this.expression = expression;
         parse();
     }

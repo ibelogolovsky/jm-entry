@@ -1,20 +1,20 @@
 package net.belogolovsky.calc;
 
-import static org.junit.Assert.assertThat;
+// import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
 
-import static org.hamcrest.core.Is.is;
+// import static org.hamcrest.core.Is.is;
 
 import org.junit.Test;
 
-public class ParseTest {
+public class ParserTest {
     @Test
     public void testOnePlusOne() {
-        Parse parse;
+        Parser parse;
         try {
-            parse = new Parse("1 + 1");
+            parse = new Parser("1 + 1");
             int op1 = parse.getOp1();
             int op2 = parse.getOp2();
             char operator = parse.getOperator();
@@ -28,9 +28,9 @@ public class ParseTest {
 
     @Test
     public void testTwoMinusTwo() {
-        Parse parse;
+        Parser parse;
         try {
-            parse = new Parse("2 - 2");
+            parse = new Parser("2 - 2");
             int op1 = parse.getOp1();
             int op2 = parse.getOp2();
             char operator = parse.getOperator();
@@ -44,9 +44,9 @@ public class ParseTest {
 
     @Test
     public void testTwoMulTwo() {
-        Parse parse;
+        Parser parse;
         try {
-            parse = new Parse("2 * 2");
+            parse = new Parser("2 * 2");
             int op1 = parse.getOp1();
             int op2 = parse.getOp2();
             char operator = parse.getOperator();
@@ -59,9 +59,9 @@ public class ParseTest {
     }
 
     public void testTwoDivTwo() {
-        Parse parse;
+        Parser parse;
         try {
-            parse = new Parse("2 / 2");
+            parse = new Parser("2 / 2");
             int op1 = parse.getOp1();
             int op2 = parse.getOp2();
             char operator = parse.getOperator();
