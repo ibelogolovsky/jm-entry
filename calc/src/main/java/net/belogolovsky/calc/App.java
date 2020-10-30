@@ -1,13 +1,23 @@
 package net.belogolovsky.calc;
 
+import java.util.Scanner;
+
 /**
- * Hello world!
- *
+ * Калькулятор
+ * Принимает на вход строку формата "<Операнд1> <Операция> <Операнд2>",
+ * где Операнд1 и Операнд2 - целые числа от 1 до 10 включительно
+ * Операция - одна из операций: +, -, *, /
+ * Операнды могут быть заданы арабскими или римскими числами одновременно
+ * @author Igor Belogolovsky (igor@belogolovsky.net)
+ * @version 1
  */
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        
+        System.out.println("Input the Expression:");
+        String expression = new Scanner(System.in).nextLine();
+        System.out.println("The Expression is: " + expression);
     }
 }
