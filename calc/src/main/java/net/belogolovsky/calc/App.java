@@ -22,9 +22,9 @@ public class App {
             Parser parser = new Parser(expression);
             int result = Calculator.evaluate(parser.getOp1(), parser.getOp2(), parser.getOperator());
             System.out.println("Result: " + result);
-        } catch (ParseException e) {
-            System.out.println("Не удалось распознать выражение");
-            e.printStackTrace();
+        } catch (ParseException | ArithmeticException e) {
+            System.out.println(e.getMessage());
+            // e.printStackTrace();
         }
 
     }

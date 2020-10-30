@@ -51,8 +51,11 @@ public class Parser {
             this.setOp1(Integer.parseInt(m1.group(1)));
             this.setOperator(m1.group(2).charAt(0));
             this.setOp2(Integer.parseInt(m1.group(3)));
+            if ((this.getOp1() > 10) || (this.getOp2() > 10) || (this.getOp1() < 1) || (this.getOp2() < 1)) {
+                throw new ParseException("Числа должны быть не меньше 1 и не больше 10", 0);
+            }
         } else {
-            throw new ParseException("Parse error", 0);
+            throw new ParseException("Не удалось распознать выражение", 0);
         }
     }
 
