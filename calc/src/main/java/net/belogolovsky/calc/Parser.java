@@ -64,7 +64,10 @@ public class Parser {
             this.setOp2(Integer.parseInt(m1.group(3)));
             this.setRomanFlag(false);
         } else if (m2.matches()) {
-
+            this.setOp1(Roman.parse(m2.group(1)));
+            this.setOperator(m2.group(2).charAt(0));
+            this.setOp2(Roman.parse(m2.group(3)));
+            this.setRomanFlag(true);
         } else {
             throw new ParseException("Не удалось распознать выражение", 0);
         }
