@@ -15,13 +15,13 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
-        System.out.println("Input the Expression:");
+        System.out.println("Введите выражение: ");
         String expression = new Scanner(System.in).nextLine();
         // System.out.println("The Expression is: " + expression);
         try {
             Parser parser = new Parser(expression);
             int result = Calculator.evaluate(parser.getOp1(), parser.getOp2(), parser.getOperator());
-            System.out.println("Result: " + result);
+            System.out.println("Результат: " + result);
         } catch (ParseException | ArithmeticException e) {
             System.out.println(e.getMessage());
             // e.printStackTrace();
