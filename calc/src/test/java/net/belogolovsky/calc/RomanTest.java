@@ -1,7 +1,7 @@
 package net.belogolovsky.calc;
 
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+// import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
 
@@ -82,51 +82,58 @@ public class RomanTest {
 
     @Test
     public void whenOneThenI() throws ArithmeticException {
-        String result = (Roman.toRoman(1));
+        String result = Roman.toRoman(1);
         String expected = "I";
-        // assertTrue(result == expected);
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenTwoThenII() throws ArithmeticException {
-        String result = (Roman.toRoman(2));
+        String result = Roman.toRoman(2);
         String expected = "II";
-        // assertTrue(result == expected);
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenFourThenIV() throws ArithmeticException {
-        String result = (Roman.toRoman(4));
+        String result = Roman.toRoman(4);
         String expected = "IV";
-        // assertTrue(result == expected);
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenFiveThenV() throws ArithmeticException {
-        String result = (Roman.toRoman(5));
+        String result = Roman.toRoman(5);
         String expected = "V";
-        // assertTrue(result == expected);
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenSevenThenVII() throws ArithmeticException {
-        String result = (Roman.toRoman(7));
+        String result = Roman.toRoman(7);
         String expected = "VII";
-        // assertTrue(result == expected);
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenNineThenIX() throws ArithmeticException {
-        String result = (Roman.toRoman(9));
+        String result = Roman.toRoman(9);
         String expected = "IX";
-        // assertTrue(result == expected);
         assertThat(result, is(expected));
     }
 
+    @Test
+    public void whenTwentyFourThenXXIV() throws ArithmeticException {
+        String result = Roman.toRoman(24);
+        String expected = "XXIV";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenNinetyThreeThenXCIII() throws ArithmeticException {
+        String result = Roman.toRoman(93);
+        String expected = "XCIII";
+        assertThat(result, is(expected));
+    }
 
 }

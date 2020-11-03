@@ -5,12 +5,14 @@ import java.util.regex.*;
 
 public class Roman {
     private int value;
+
     public Roman(String roman) throws ParseException {
         this.value = Roman.parse(roman);
     }
 
     /**
      * Converts roman presentation to integer
+     * 
      * @param str - contains roman presentation
      * @return corresponding integer value
      * @throws ParseException
@@ -30,7 +32,7 @@ public class Roman {
                 result = m.group(5).length();
             } else {
                 throw new ParseException("Ошибка в записи римского числа", 0);
-            }        
+            }
         } else {
             throw new ParseException("Ошибка в записи римского числа", 0);
         }
@@ -45,25 +47,25 @@ public class Roman {
      */
     public static String toRoman(int value) throws ArithmeticException {
         String result = "";
-            if ((value < 1) || (value > 10)) {
-                throw new ArithmeticException("Число должно быть не меньше 1 и не больше 10");
-            }
-            if (value == 10) {
-                result = "X";
-            } else if (value == 9) {
-                result = "IX";
-            } else if (value == 4) {
-                result = "IV";
+        if (value == 0) {
+            result = "0";
+        } 
+        if (value < 0) {
+            result = "-";
+            value = -value;
+        }
+        String[] letters = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int[] numbers = {100, 90, 50, 40, 10, 9, 5, 4, 1};
+        int n = numbers.length;
+        int i = 0;
+        while (value > 0) {
+            if (value >= numbers[i]) {
+                result += letters[i];
+                value -= numbers[i];
             } else {
-                if (value > 4) {
-                    result = "V";
-                    value -= 5;
-                }
-                for (int i = 0; i < value; i++) {
-                    result += "I";
-                }
-                // result += new String(new char[value]).replace("\0", "I");
+                i++;
             }
+        }
         return result;
     }
 

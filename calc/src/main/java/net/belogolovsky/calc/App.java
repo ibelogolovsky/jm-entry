@@ -21,7 +21,11 @@ public class App {
         try {
             Parser parser = new Parser(expression);
             int result = Calculator.evaluate(parser.getOp1(), parser.getOp2(), parser.getOperator());
-            System.out.println("Результат: " + result);
+            if (parser.getRomanFlag()) {
+                System.out.println("Результат: " + Roman.toRoman(result));
+            } else {
+                System.out.println("Результат: " + result);
+            }
         } catch (ParseException | ArithmeticException e) {
             System.out.println(e.getMessage());
             // e.printStackTrace();
